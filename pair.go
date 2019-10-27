@@ -13,8 +13,8 @@ func Create() (p Pair) {
 	return p
 }
 
-// Make makes a pair with the provided arguments as values
-func (p Pair) Make(e1, e2 interface{}) {
+// Set makes a pair with the provided arguments as values
+func (p Pair) Set(e1, e2 interface{}) {
 	p[0] = e1
 	p[1] = e2
 }
