@@ -30,7 +30,7 @@ func NewPair(e1, e2 interface{}) (p Pair) {
 }
 
 // Equals checks if two pairs are equal
-func (p Pair) Equals(pa Pair) (bool) {
+func (p Pair) Equals(pa Pair) bool {
 	if p[0] == pa[0] && p[1] == pa[1] {
 		return true
 	}
