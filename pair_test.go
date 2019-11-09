@@ -56,3 +56,19 @@ func TestNotEquals(t *testing.T) {
 		t.Errorf("%v.Equals(%v) is true, want false", p1, p2)
 	}
 }
+
+func TestCompositeType(t *testing.T) {
+	data := struct {
+		X int
+		Y int
+	}{
+		1,
+		2,
+	}
+
+	p := NewPair(data, 2)
+
+	if p[0] != data || p[1] != 2 {
+		t.Errorf("Got %v, wanted ({1, 2}, 2)", p)
+	}
+}
