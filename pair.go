@@ -4,33 +4,24 @@
 
 package pair
 
-type Pair []interface{}
+type Pair [2]interface{}
 
-// Create creates and returns a new pair.
-func Create() (p Pair) {
-	p = make([]interface{}, 2, 2)
-
-	return p
-}
-
-// Set makes a pair with the provided arguments as values
-func (p Pair) Set(e1, e2 interface{}) {
-	p[0] = e1
-	p[1] = e2
-}
-
-// NewPair creates and initializes a new pair and returns it.
-func NewPair(e1, e2 interface{}) (p Pair) {
-	p = make([]interface{}, 2, 2)
-
+// Make makes and returns a new pair with the provided values.
+func Make(e1, e2 interface{}) (p Pair) {
 	p[0] = e1
 	p[1] = e2
 
 	return p
 }
 
-// Equals checks if two pairs are equal
-func (p Pair) Equals(pa Pair) bool {
+// Set sets the pair's values as the provided ones.
+func (p *Pair) Set(e1, e2 interface{}) {
+	p[0] = e1
+	p[1] = e2
+}
+
+// Equals checks if two pairs are equal.
+func (p *Pair) Equals(pa Pair) bool {
 	if p[0] == pa[0] && p[1] == pa[1] {
 		return true
 	}
